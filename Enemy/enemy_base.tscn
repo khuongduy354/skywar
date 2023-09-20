@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqgn61ie8msr2"]
+
+[ext_resource type="Texture2D" uid="uid://bakk6njj4v4uc" path="res://icon.svg" id="1_hinp2"]
+[ext_resource type="Script" path="res://Enemy/enemy_base.gd" id="1_l8exc"]
+[ext_resource type="Texture2D" uid="uid://dqo0v71qo426e" path="res://assets/0x72_DungeonTilesetII_v1.5.png" id="2_qrj5w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hbpia"]
+
+[node name="EnemyBase" type="CharacterBody2D"]
+script = ExtResource("1_l8exc")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("1_hinp2")
+
+[node name="0x72DungeonTilesetIiV1_5" type="Sprite2D" parent="."]
+position = Vector2(77, -18)
+scale = Vector2(3.54539, 3.54539)
+texture = ExtResource("2_qrj5w")
+region_enabled = true
+region_rect = Rect2(288, 167, 16, 24)
+
+[node name="DetectPlayer" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectPlayer"]
+scale = Vector2(34.4062, 34.4062)
+shape = SubResource("CircleShape2D_hbpia")
+
+[connection signal="body_entered" from="DetectPlayer" to="." method="_on_detect_player_body_entered"]

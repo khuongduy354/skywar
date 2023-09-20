@@ -20,4 +20,4 @@ func set_active():
 
 func set_inactive(): 
 	if real_item: 
-		real_item.queue_free()
+		Events.inactive_item.emit(real_item)

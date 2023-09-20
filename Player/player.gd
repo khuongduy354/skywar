@@ -4,6 +4,10 @@ class_name Player
 @export var speed = 400 
 func _ready(): 
 	Events.connect("active_item",Callable(self,"_on_active_item"))
+	Events.connect("inactive_item",Callable(self,"_on_inactive_item"))
+	
+func _on_inactive_item(item:Item):
+	remove_child(item)
 func _on_active_item(item:Item): 
 	add_child(item)
 func get_input(): 
