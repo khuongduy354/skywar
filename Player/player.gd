@@ -2,7 +2,10 @@ extends CharacterBody2D
 class_name Player
 
 @export var speed = 400 
-
+func _ready(): 
+	Events.connect("active_item",Callable(self,"_on_active_item"))
+func _on_active_item(item:Item): 
+	add_child(item)
 func get_input(): 
 	var dir =Vector2.ZERO 
 	dir.y =  Input.get_axis("ui_up", "ui_down")

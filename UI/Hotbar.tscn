@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bm0nwcxhmekb0"]
+[gd_scene load_steps=3 format=3 uid="uid://bm0nwcxhmekb0"]
 
 [ext_resource type="Script" path="res://UI/Hotbar.gd" id="1_lqpdv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_121ui"]
 
 [node name="Hotbar" type="Control"]
 layout_mode = 3
@@ -23,9 +25,10 @@ offset_bottom = 88.0
 grow_horizontal = 0
 
 [node name="Button" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(70, 30)
 layout_mode = 2
-text = "item 1"
+icon = SubResource("AtlasTexture_121ui")
 
 [node name="Button2" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(70, 30)
 layout_mode = 2
-text = "item 2"

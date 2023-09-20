@@ -1,18 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://raf5tfownbgc"]
+[gd_scene load_steps=2 format=3 uid="uid://raf5tfownbgc"]
 
 [ext_resource type="Script" path="res://UI/Slot.gd" id="1_xeu86"]
-[ext_resource type="PackedScene" uid="uid://ctmqni53jhlbb" path="res://UI/ui_item.tscn" id="2_pd5td"]
 
 [node name="Slot" type="VBoxContainer"]
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_xeu86")
 
-[node name="UIItem" parent="." instance=ExtResource("2_pd5td")]
-layout_mode = 2
-
 [node name="Button" type="Button" parent="."]
 layout_mode = 2
 text = "Equip"
-
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
